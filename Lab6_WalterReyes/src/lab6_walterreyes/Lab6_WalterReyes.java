@@ -5,9 +5,15 @@
  */
 package lab6_walterreyes;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -56,7 +62,31 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
         b_acción = new javax.swing.JRadioButton();
         Guardar_Lista = new javax.swing.JButton();
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jDialog1 = new javax.swing.JDialog();
+        Crear_Programa = new javax.swing.JDialog();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        Nombre_Programa1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        b_anime1 = new javax.swing.JRadioButton();
+        b_serie1 = new javax.swing.JRadioButton();
+        b_documental1 = new javax.swing.JRadioButton();
+        b_película1 = new javax.swing.JRadioButton();
+        jLabel10 = new javax.swing.JLabel();
+        JS_Puntuación1 = new javax.swing.JSpinner();
+        jLabel11 = new javax.swing.JLabel();
+        Año1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        b_comedia1 = new javax.swing.JRadioButton();
+        b_romance1 = new javax.swing.JRadioButton();
+        b_terror1 = new javax.swing.JRadioButton();
+        b_syfy1 = new javax.swing.JRadioButton();
+        b_suspenso1 = new javax.swing.JRadioButton();
+        b_acción1 = new javax.swing.JRadioButton();
+        Guardar_Lista1 = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        Cb_Listap = new javax.swing.JComboBox<>();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         Crear_ClaudiList = new javax.swing.JButton();
         Agregar_Programa = new javax.swing.JButton();
         Cargar_Archivo = new javax.swing.JButton();
@@ -97,16 +127,22 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel9.setText("Genero");
 
+        buttonGroup2.add(b_comedia);
         b_comedia.setText("Comedia ");
 
+        buttonGroup2.add(b_romance);
         b_romance.setText("Romance");
 
+        buttonGroup2.add(b_terror);
         b_terror.setText("terror");
 
+        buttonGroup2.add(b_syfy);
         b_syfy.setText("Syfy");
 
+        buttonGroup2.add(b_suspenso);
         b_suspenso.setText("Suspenso");
 
+        buttonGroup2.add(b_acción);
         b_acción.setText("Acción");
 
         Guardar_Lista.setText("Guardar");
@@ -230,15 +266,170 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
                     .addGap(0, 23, Short.MAX_VALUE)))
         );
 
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel5.setText("Nombre del programa:");
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel6.setText("Tipo de Programa: ");
+
+        buttonGroup1.add(b_anime1);
+        b_anime1.setText("Anime");
+
+        buttonGroup1.add(b_serie1);
+        b_serie1.setText("Serie");
+
+        buttonGroup1.add(b_documental1);
+        b_documental1.setText("Documental");
+
+        buttonGroup1.add(b_película1);
+        b_película1.setText("Película");
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel10.setText("Puntuación: ");
+
+        JS_Puntuación1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel11.setText("Año de lanzamiento");
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel12.setText("Genero");
+
+        buttonGroup2.add(b_comedia1);
+        b_comedia1.setText("Comedia ");
+
+        buttonGroup2.add(b_romance1);
+        b_romance1.setText("Romance");
+
+        buttonGroup2.add(b_terror1);
+        b_terror1.setText("terror");
+
+        buttonGroup2.add(b_syfy1);
+        b_syfy1.setText("Syfy");
+
+        buttonGroup2.add(b_suspenso1);
+        b_suspenso1.setText("Suspenso");
+
+        buttonGroup2.add(b_acción1);
+        b_acción1.setText("Acción");
+
+        Guardar_Lista1.setText("Guardar");
+        Guardar_Lista1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Guardar_Lista1ActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel13.setText("Añadir a Lista: ");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(242, 242, 242)
+                .addComponent(Guardar_Lista1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(33, 33, 33)
+                        .addComponent(JS_Puntuación1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(b_comedia1)
+                        .addGap(18, 18, 18)
+                        .addComponent(b_romance1)
+                        .addGap(18, 18, 18)
+                        .addComponent(b_terror1)
+                        .addGap(18, 18, 18)
+                        .addComponent(b_syfy1)
+                        .addGap(18, 18, 18)
+                        .addComponent(b_suspenso1)
+                        .addGap(18, 18, 18)
+                        .addComponent(b_acción1))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel13))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Año1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(b_anime1)
+                                .addGap(18, 18, 18)
+                                .addComponent(b_serie1)
+                                .addGap(18, 18, 18)
+                                .addComponent(b_documental1)
+                                .addGap(18, 18, 18)
+                                .addComponent(b_película1))
+                            .addComponent(Nombre_Programa1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Cb_Listap, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 64, Short.MAX_VALUE))
         );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(Nombre_Programa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(b_anime1)
+                    .addComponent(b_serie1)
+                    .addComponent(b_documental1)
+                    .addComponent(b_película1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(JS_Puntuación1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(Año1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(Cb_Listap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(b_comedia1)
+                    .addComponent(b_romance1)
+                    .addComponent(b_terror1)
+                    .addComponent(b_syfy1)
+                    .addComponent(b_suspenso1)
+                    .addComponent(b_acción1))
+                .addGap(26, 26, 26)
+                .addComponent(Guardar_Lista1))
+        );
+
+        javax.swing.GroupLayout Crear_ProgramaLayout = new javax.swing.GroupLayout(Crear_Programa.getContentPane());
+        Crear_Programa.getContentPane().setLayout(Crear_ProgramaLayout);
+        Crear_ProgramaLayout.setHorizontalGroup(
+            Crear_ProgramaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 648, Short.MAX_VALUE)
+            .addGroup(Crear_ProgramaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Crear_ProgramaLayout.createSequentialGroup()
+                    .addGap(0, 5, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 6, Short.MAX_VALUE)))
+        );
+        Crear_ProgramaLayout.setVerticalGroup(
+            Crear_ProgramaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 419, Short.MAX_VALUE)
+            .addGroup(Crear_ProgramaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Crear_ProgramaLayout.createSequentialGroup()
+                    .addGap(0, 23, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 23, Short.MAX_VALUE)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -258,6 +449,11 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
         });
 
         Cargar_Archivo.setText("Cargar Archivo");
+        Cargar_Archivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cargar_ArchivoActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -343,7 +539,10 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
     }//GEN-LAST:event_Crear_ClaudiListActionPerformed
 
     private void Agregar_ProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agregar_ProgramaActionPerformed
-        // TODO add your handling code here:
+      Crear_Programa.setModal(true);
+        Crear_Programa.pack();
+       Crear_Programa.setLocationRelativeTo(this);
+        Crear_Programa.setVisible(true);    
     }//GEN-LAST:event_Agregar_ProgramaActionPerformed
 
     private void Guardar_ListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Guardar_ListaActionPerformed
@@ -358,9 +557,9 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
         
         try{
          nombre = Nombre_Programa.getText();
-         if((int)JS_Puntuación.getValue()> 10){    
+           
          puntuación = (int)JS_Puntuación.getValue();
-         }
+         
          fecha = Año.getText();
          if(b_anime.isSelected()){
              tipo = "Anime";
@@ -410,7 +609,9 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
                   Nombre_Programa.setText("");
                   Nombre_Lista.setText("");
                   Año.setText("");
-                  
+                   DefaultComboBoxModel modelo1 = (DefaultComboBoxModel) Cb_Listap.getModel();
+                   Cb_Listap.setModel(modelo1);
+                   modelo1.addElement(cl);
                   ClaudiList.setVisible(false);
         }
         
@@ -461,6 +662,148 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void Guardar_Lista1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Guardar_Lista1ActionPerformed
+         String nombre = "";
+        int puntuación = 0;
+        String fecha = "";
+        String tipo = "";
+        String genero = "";
+        
+        Boolean f = true;
+        
+        
+        try{
+         nombre = Nombre_Programa1.getText();
+           
+         puntuación = (int)JS_Puntuación1.getValue();
+         
+         fecha = Año1.getText();
+         if(b_anime1.isSelected()){
+             tipo = "Anime";
+         }
+         if(b_serie1.isSelected()){
+             tipo = "Serie";
+         }
+         if(b_documental1.isSelected()){
+             tipo = "Documental";
+         }
+         if(b_película1.isSelected()){
+             tipo = "Película";
+         }
+         if(b_comedia1.isSelected()){
+             genero = "Comedia";
+         }
+         if(b_romance1.isSelected()){
+             genero = "Romance";
+         }
+         if(b_terror1.isSelected()){
+             genero = "Terror";
+         }
+         if(b_syfy1.isSelected()){
+             genero = "SyFy";
+         }
+         if(b_suspenso1.isSelected()){
+             genero = "Suspenso";
+         }
+         if(b_acción1.isSelected()){
+             genero = "Acción";
+         }
+         
+         
+        }catch(Exception e){
+         JOptionPane.showMessageDialog(null,"Ocurrió un error al crear Programa");
+         f = false;
+        }
+        if(f== true){
+            JOptionPane.showMessageDialog(null,"Se ha guardado la lista exitosamente");
+                  
+                  Programas p = new Programas(nombre,puntuación,fecha,tipo,genero);
+                
+                claudilist cl = (claudilist)Cb_Listap.getSelectedItem();
+                 
+                cl.getLista().add(p);
+                  
+                  Nombre_Programa1.setText("");
+                  Nombre_Lista.setText("");
+                  Año.setText("");
+                   
+                  Crear_Programa.setVisible(false);
+        } 
+    }//GEN-LAST:event_Guardar_Lista1ActionPerformed
+
+    private void Cargar_ArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cargar_ArchivoActionPerformed
+        eliminar(); 
+        DefaultTableModel models = (DefaultTableModel) jTable1.getModel();
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Lista.getModel();
+        Scanner sc = null;
+ 
+        try {
+            ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
+        } catch (Exception e) {
+        }
+  
+        JFileChooser fileChooser = new JFileChooser("./");
+
+        int seleccion = fileChooser.showOpenDialog(this);
+
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            
+            
+            try {
+
+                File archivo = fileChooser.getSelectedFile();
+                claudilist c = new claudilist();
+
+                String nombre = archivo.getName();
+                int l = nombre.length();
+
+                nombre = nombre.substring(0, l - 4);
+
+                c.setNombre(nombre);
+                modelo.setSelectedItem(c);
+                sc = new Scanner(archivo);
+
+                String file = "";
+
+                while (sc.hasNext()) {
+                    file += sc.next();
+
+                }
+                String resultado = file;
+
+                sc = new Scanner(resultado);
+                sc.useDelimiter("/");
+
+                while (sc.hasNext()) {
+
+                    Programas p = new Programas(sc.next(),
+                            sc.nextInt(), sc.next(),
+                            sc.next(), sc.next()
+                    )
+                    ;
+
+                    Object[] newRow = {
+                        p.getNombre(),
+                        p.getPuntuación(),
+                        p.getFecha(),
+                        p.getTipo(),
+                        p.getGenero()
+                    };
+                    models.addRow(newRow);
+
+                    c.getLista().add(p);
+
+                }
+
+                modelo.addElement(c);
+                jTable1.setModel(models);
+                cb_Lista.setModel(modelo);
+
+            } catch (Exception e) {
+            }
+        }
+    }//GEN-LAST:event_Cargar_ArchivoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -499,34 +842,58 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Agregar_Programa;
     private javax.swing.JTextField Año;
+    private javax.swing.JTextField Año1;
     private javax.swing.JButton Cargar_Archivo;
+    private javax.swing.JComboBox<String> Cb_Listap;
     private javax.swing.JDialog ClaudiList;
     private javax.swing.JButton Crear_ClaudiList;
+    private javax.swing.JDialog Crear_Programa;
     private javax.swing.JButton Guardar_Lista;
+    private javax.swing.JButton Guardar_Lista1;
     private javax.swing.JSpinner JS_Puntuación;
+    private javax.swing.JSpinner JS_Puntuación1;
     private javax.swing.JTextField Nombre_Lista;
     private javax.swing.JTextField Nombre_Programa;
+    private javax.swing.JTextField Nombre_Programa1;
     private javax.swing.JRadioButton b_acción;
+    private javax.swing.JRadioButton b_acción1;
     private javax.swing.JRadioButton b_anime;
+    private javax.swing.JRadioButton b_anime1;
     private javax.swing.JRadioButton b_comedia;
+    private javax.swing.JRadioButton b_comedia1;
     private javax.swing.JRadioButton b_documental;
+    private javax.swing.JRadioButton b_documental1;
     private javax.swing.JRadioButton b_película;
+    private javax.swing.JRadioButton b_película1;
     private javax.swing.JRadioButton b_romance;
+    private javax.swing.JRadioButton b_romance1;
     private javax.swing.JRadioButton b_serie;
+    private javax.swing.JRadioButton b_serie1;
     private javax.swing.JRadioButton b_suspenso;
+    private javax.swing.JRadioButton b_suspenso1;
     private javax.swing.JRadioButton b_syfy;
+    private javax.swing.JRadioButton b_syfy1;
     private javax.swing.JRadioButton b_terror;
+    private javax.swing.JRadioButton b_terror1;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JComboBox<String> cb_Lista;
     private javax.swing.JButton jButton1;
-    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
