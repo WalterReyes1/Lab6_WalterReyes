@@ -87,6 +87,26 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
         Cb_Listap = new javax.swing.JComboBox<>();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
+        Administrador = new javax.swing.JPopupMenu();
+        Eliminar = new javax.swing.JMenuItem();
+        Editar = new javax.swing.JMenuItem();
+        j_editar = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        Ingresar_Nombre = new javax.swing.JTextField();
+        Ingresar_Puntación = new javax.swing.JTextField();
+        Ingresar_año = new javax.swing.JTextField();
+        Ingresar_Tipo = new javax.swing.JTextField();
+        Ingresar_Genero = new javax.swing.JTextField();
+        b_nombre = new javax.swing.JButton();
+        b_Puntuación = new javax.swing.JButton();
+        b_Estreno = new javax.swing.JButton();
+        b_Tipo = new javax.swing.JButton();
+        b_Genero = new javax.swing.JButton();
         Crear_ClaudiList = new javax.swing.JButton();
         Agregar_Programa = new javax.swing.JButton();
         Cargar_Archivo = new javax.swing.JButton();
@@ -432,6 +452,163 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
                     .addGap(0, 23, Short.MAX_VALUE)))
         );
 
+        Eliminar.setText("Eliminar");
+        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarActionPerformed(evt);
+            }
+        });
+        Administrador.add(Eliminar);
+
+        Editar.setText("Editar");
+        Editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditarActionPerformed(evt);
+            }
+        });
+        Administrador.add(Editar);
+
+        buttonGroup3.add(jRadioButton1);
+        jRadioButton1.setText("Nombre");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup3.add(jRadioButton2);
+        jRadioButton2.setText("Puntuación");
+
+        buttonGroup3.add(jRadioButton3);
+        jRadioButton3.setText("Estreno");
+
+        buttonGroup3.add(jRadioButton4);
+        jRadioButton4.setText("Tipo");
+
+        buttonGroup3.add(jRadioButton5);
+        jRadioButton5.setText("Género");
+
+        b_nombre.setText("Guardar N");
+
+        b_Puntuación.setText("Guardar P");
+        b_Puntuación.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_PuntuaciónActionPerformed(evt);
+            }
+        });
+
+        b_Estreno.setText("Guardar E");
+        b_Estreno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_EstrenoActionPerformed(evt);
+            }
+        });
+
+        b_Tipo.setText("Guardar T");
+        b_Tipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_TipoActionPerformed(evt);
+            }
+        });
+
+        b_Genero.setText("Guardar G");
+        b_Genero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_GeneroActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Ingresar_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioButton1))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton2)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(Ingresar_Puntación, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jRadioButton3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton4)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton5))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Ingresar_año, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(Ingresar_Tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Ingresar_Genero, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(b_nombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(b_Puntuación)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(b_Estreno)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(b_Tipo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(b_Genero)))
+                .addGap(0, 59, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton3)
+                    .addComponent(jRadioButton4)
+                    .addComponent(jRadioButton5))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Ingresar_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ingresar_Puntación, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ingresar_año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ingresar_Tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ingresar_Genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(b_nombre)
+                    .addComponent(b_Puntuación)
+                    .addComponent(b_Estreno)
+                    .addComponent(b_Tipo)
+                    .addComponent(b_Genero))
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout j_editarLayout = new javax.swing.GroupLayout(j_editar.getContentPane());
+        j_editar.getContentPane().setLayout(j_editarLayout);
+        j_editarLayout.setHorizontalGroup(
+            j_editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 506, Short.MAX_VALUE)
+            .addGroup(j_editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(j_editarLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        j_editarLayout.setVerticalGroup(
+            j_editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(j_editarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(j_editarLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Crear_ClaudiList.setText("Crear Claudilist");
@@ -469,6 +646,11 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
             }
         });
         jScrollPane2.setViewportView(jTable1);
@@ -735,6 +917,7 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
         eliminar(); 
         DefaultTableModel models = (DefaultTableModel) jTable1.getModel();
         DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Lista.getModel();
+        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) Cb_Listap.getModel();
         Scanner sc = null;
  
         try {
@@ -761,6 +944,7 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
 
                 c.setNombre(nombre);
                 modelo.setSelectedItem(c);
+                
                 sc = new Scanner(archivo);
 
                 String file = "";
@@ -792,17 +976,95 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
                     models.addRow(newRow);
 
                     c.getLista().add(p);
+                    Cb_Listap.setModel(modelo2);
 
                 }
 
+                modelo2.addElement(c);
                 modelo.addElement(c);
                 jTable1.setModel(models);
                 cb_Lista.setModel(modelo);
-
             } catch (Exception e) {
             }
         }
     }//GEN-LAST:event_Cargar_ArchivoActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+     if (evt.isMetaDown()) {
+            if (jTable1.getSelectedRow() >= 0) {
+                Administrador.show(jTable1, evt.getX(), evt.getY());
+            }
+        }    
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+      DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+
+        int index = jTable1.getSelectedRow();
+
+        Programas p = new Programas(
+                (String) modelo.getValueAt(index, 0),
+                (int) modelo.getValueAt(index, 1),
+                (String) modelo.getValueAt(index, 2),
+                (String) modelo.getValueAt(index, 3),
+                (String) modelo.getValueAt(index, 4)
+        );
+        ((claudilist) cb_Lista.getSelectedItem()).getLista().remove(index);
+        modelo.removeRow(index);
+
+        
+
+        jTable1.setModel(modelo);
+
+        JOptionPane.showMessageDialog(this, "Se ha removido la cancion de la playlist");
+        try {
+            ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
+        } catch (Exception e) {
+        }  
+    }//GEN-LAST:event_EliminarActionPerformed
+
+    private void b_PuntuaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_PuntuaciónActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_PuntuaciónActionPerformed
+
+    private void b_EstrenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_EstrenoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_EstrenoActionPerformed
+
+    private void b_TipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_TipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_TipoActionPerformed
+
+    private void b_GeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_GeneroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b_GeneroActionPerformed
+
+    private void EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarActionPerformed
+        j_editar.setModal(true);
+        j_editar.pack();
+        j_editar.setLocationRelativeTo(this);
+        j_editar.setVisible(true);
+        Ingresar_Nombre.setVisible(false);
+        Ingresar_Puntación.setVisible(false);
+        Ingresar_año.setVisible(false);
+        Ingresar_Tipo.setVisible(false);
+        Ingresar_Genero.setVisible(false);
+        
+    }//GEN-LAST:event_EditarActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        Ingresar_Nombre.setVisible(true);
+        Ingresar_Puntación.setVisible(false);
+        Ingresar_año.setVisible(false);
+        Ingresar_Tipo.setVisible(false);
+        Ingresar_Genero.setVisible(false);
+        //-------------------------------------//
+        b_Puntuación.setVisible(false);
+        b_Estreno.setVisible(false);
+        b_Tipo.setVisible(false);
+        b_Genero.setVisible(false); 
+
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -840,6 +1102,7 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPopupMenu Administrador;
     private javax.swing.JButton Agregar_Programa;
     private javax.swing.JTextField Año;
     private javax.swing.JTextField Año1;
@@ -848,13 +1111,24 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
     private javax.swing.JDialog ClaudiList;
     private javax.swing.JButton Crear_ClaudiList;
     private javax.swing.JDialog Crear_Programa;
+    private javax.swing.JMenuItem Editar;
+    private javax.swing.JMenuItem Eliminar;
     private javax.swing.JButton Guardar_Lista;
     private javax.swing.JButton Guardar_Lista1;
+    private javax.swing.JTextField Ingresar_Genero;
+    private javax.swing.JTextField Ingresar_Nombre;
+    private javax.swing.JTextField Ingresar_Puntación;
+    private javax.swing.JTextField Ingresar_Tipo;
+    private javax.swing.JTextField Ingresar_año;
     private javax.swing.JSpinner JS_Puntuación;
     private javax.swing.JSpinner JS_Puntuación1;
     private javax.swing.JTextField Nombre_Lista;
     private javax.swing.JTextField Nombre_Programa;
     private javax.swing.JTextField Nombre_Programa1;
+    private javax.swing.JButton b_Estreno;
+    private javax.swing.JButton b_Genero;
+    private javax.swing.JButton b_Puntuación;
+    private javax.swing.JButton b_Tipo;
     private javax.swing.JRadioButton b_acción;
     private javax.swing.JRadioButton b_acción1;
     private javax.swing.JRadioButton b_anime;
@@ -863,6 +1137,7 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
     private javax.swing.JRadioButton b_comedia1;
     private javax.swing.JRadioButton b_documental;
     private javax.swing.JRadioButton b_documental1;
+    private javax.swing.JButton b_nombre;
     private javax.swing.JRadioButton b_película;
     private javax.swing.JRadioButton b_película1;
     private javax.swing.JRadioButton b_romance;
@@ -893,8 +1168,15 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JDialog j_editar;
     // End of variables declaration//GEN-END:variables
 }
