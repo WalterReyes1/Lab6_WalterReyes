@@ -100,13 +100,13 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
         Ingresar_Nombre = new javax.swing.JTextField();
         Ingresar_Puntación = new javax.swing.JTextField();
         Ingresar_año = new javax.swing.JTextField();
-        Ingresar_Tipo = new javax.swing.JTextField();
-        Ingresar_Genero = new javax.swing.JTextField();
         b_nombre = new javax.swing.JButton();
         b_Puntuación = new javax.swing.JButton();
         b_Estreno = new javax.swing.JButton();
         b_Tipo = new javax.swing.JButton();
         b_Genero = new javax.swing.JButton();
+        Ingresar_Tipo = new javax.swing.JComboBox<>();
+        Ingresar_Genero = new javax.swing.JComboBox<>();
         Crear_ClaudiList = new javax.swing.JButton();
         Agregar_Programa = new javax.swing.JButton();
         Cargar_Archivo = new javax.swing.JButton();
@@ -478,17 +478,42 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
 
         buttonGroup3.add(jRadioButton2);
         jRadioButton2.setText("Puntuación");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         buttonGroup3.add(jRadioButton3);
         jRadioButton3.setText("Estreno");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
 
         buttonGroup3.add(jRadioButton4);
         jRadioButton4.setText("Tipo");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
 
         buttonGroup3.add(jRadioButton5);
         jRadioButton5.setText("Género");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
 
         b_nombre.setText("Guardar N");
+        b_nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b_nombreActionPerformed(evt);
+            }
+        });
 
         b_Puntuación.setText("Guardar P");
         b_Puntuación.addActionListener(new java.awt.event.ActionListener() {
@@ -518,6 +543,11 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
             }
         });
 
+        Ingresar_Tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anime ", "serie", "documental", "película" }));
+
+        Ingresar_Genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Comedia", "romance", "terror", "SyFy", "Suspenso", "accion" }));
+        Ingresar_Genero.setToolTipText("");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -546,9 +576,7 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(Ingresar_año, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(Ingresar_Tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Ingresar_Genero, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(Ingresar_Tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(b_nombre)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -558,7 +586,9 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(b_Tipo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(b_Genero)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Ingresar_Genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(b_Genero))))
                 .addGap(0, 59, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -898,12 +928,33 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
         }
         if(f== true){
             JOptionPane.showMessageDialog(null,"Se ha guardado la lista exitosamente");
-                  
+        DefaultTableModel modelo2 = (DefaultTableModel) jTable1.getModel();
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_Lista.getModel();
+
                   Programas p = new Programas(nombre,puntuación,fecha,tipo,genero);
                 
                 claudilist cl = (claudilist)Cb_Listap.getSelectedItem();
                  
                 cl.getLista().add(p);
+                
+            
+            
+           eliminar();
+            for (Programas p1 : cl.getLista()) {
+
+                Object[] newRow = {
+                    p1.getNombre(),
+                    p1.getPuntuación(),
+                    p1.getFecha(),
+                    p1.getTipo(),
+                    p1.getGenero()
+                };
+
+                modelo2.addRow(newRow);
+            }
+
+            
+        
                   
                   Nombre_Programa1.setText("");
                   Nombre_Lista.setText("");
@@ -911,6 +962,7 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
                    
                   Crear_Programa.setVisible(false);
         } 
+        
     }//GEN-LAST:event_Guardar_Lista1ActionPerformed
 
     private void Cargar_ArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cargar_ArchivoActionPerformed
@@ -1024,19 +1076,112 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void b_PuntuaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_PuntuaciónActionPerformed
-        // TODO add your handling code here:
+         DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
+
+ if (jTable1.getSelectedRow() >= 0) {
+     int indice = jTable1.getSelectedRow();
+        modelo1.setValueAt(Ingresar_Puntación.getText(), indice, 1);
+     jTable1.setModel(modelo1);
+     ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setPuntuación(Integer.parseInt(Ingresar_Puntación.getText()));
+
+     try {
+         ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
+     } catch (IOException ex) {
+
+     }
+ }
+ Ingresar_Puntación.setText("");
+ j_editar.setVisible(false);
     }//GEN-LAST:event_b_PuntuaciónActionPerformed
 
     private void b_EstrenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_EstrenoActionPerformed
-        // TODO add your handling code here:
+           DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
+ DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Lista.getModel();
+ if (jTable1.getSelectedRow() >= 0) {
+     int indice = jTable1.getSelectedRow();
+     jTable1.setModel(modelo1);
+     
+     ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setFecha(Ingresar_año.getText());
+       modelo1.setValueAt(Ingresar_año, indice, 2);
+
+     try {
+         ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
+     } catch (IOException ex) {
+
+     }
+ }
+ 
+ j_editar.setVisible(false); 
     }//GEN-LAST:event_b_EstrenoActionPerformed
 
     private void b_TipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_TipoActionPerformed
-        // TODO add your handling code here:
+               DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
+ DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Lista.getModel();
+ if (jTable1.getSelectedRow() >= 0) {
+     int indice = jTable1.getSelectedRow();
+     jTable1.setModel(modelo1);
+     String tipo = "";
+     if(Ingresar_Tipo.getSelectedIndex()==0){
+       tipo = "Anime";  
+     }
+     if(Ingresar_Tipo.getSelectedIndex()==1){
+       tipo = "Serie";  
+     }
+     if(Ingresar_Tipo.getSelectedIndex()==2){
+       tipo = "Documental";  
+     }
+     if(Ingresar_Tipo.getSelectedIndex()==3){
+       tipo = "Película";  
+     }
+     ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setTipo(tipo);
+       modelo1.setValueAt(tipo, indice, 3);
+
+     try {
+         ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
+     } catch (IOException ex) {
+
+     }
+ }
+ 
+ j_editar.setVisible(false); 
     }//GEN-LAST:event_b_TipoActionPerformed
 
     private void b_GeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_GeneroActionPerformed
-        // TODO add your handling code here:
+  DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
+ DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Lista.getModel();
+ if (jTable1.getSelectedRow() >= 0) {
+     int indice = jTable1.getSelectedRow();
+     jTable1.setModel(modelo1);
+     String tipo = "";
+     if(Ingresar_Tipo.getSelectedIndex()==0){
+       tipo = "Comedia";  
+     }
+     if(Ingresar_Tipo.getSelectedIndex()==1){
+       tipo = "Romance";  
+     }
+     if(Ingresar_Tipo.getSelectedIndex()==2){
+       tipo = "Terror";  
+     }
+     if(Ingresar_Tipo.getSelectedIndex()==3){
+       tipo = "Syfy";  
+     }
+     if(Ingresar_Tipo.getSelectedIndex()==4){
+       tipo = "Suspenso";  
+     }
+     if(Ingresar_Tipo.getSelectedIndex()==5){
+       tipo = "Acción";  
+     }
+     ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setTipo(tipo);
+       modelo1.setValueAt(tipo, indice, 4);
+
+     try {
+         ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
+     } catch (IOException ex) {
+
+     }
+ }
+ 
+ j_editar.setVisible(false);         
     }//GEN-LAST:event_b_GeneroActionPerformed
 
     private void EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarActionPerformed
@@ -1062,9 +1207,86 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
         b_Puntuación.setVisible(false);
         b_Estreno.setVisible(false);
         b_Tipo.setVisible(false);
-        b_Genero.setVisible(false); 
+        b_Genero.setVisible(false);
+        b_nombre.setVisible(true);
 
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+         Ingresar_Nombre.setVisible(false);
+        Ingresar_Puntación.setVisible(true);
+        Ingresar_año.setVisible(false);
+        Ingresar_Tipo.setVisible(false);
+        Ingresar_Genero.setVisible(false);
+        //-------------------------------------//
+        b_nombre.setVisible(false);
+        b_Puntuación.setVisible(true);
+        b_Estreno.setVisible(false);
+        b_Tipo.setVisible(false);
+        b_Genero.setVisible(false);
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        Ingresar_Nombre.setVisible(false);
+        Ingresar_Puntación.setVisible(false);
+        Ingresar_año.setVisible(true);
+        Ingresar_Tipo.setVisible(false);
+        Ingresar_Genero.setVisible(false);
+        //-------------------------------------//
+        b_nombre.setVisible(false);
+        b_Puntuación.setVisible(false);
+        b_Estreno.setVisible(true);
+        b_Tipo.setVisible(false);
+        b_Genero.setVisible(false);
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        Ingresar_Nombre.setVisible(false);
+        Ingresar_Puntación.setVisible(false);
+        Ingresar_año.setVisible(false);
+        Ingresar_Tipo.setVisible(true);
+        Ingresar_Genero.setVisible(false);
+        //-------------------------------------//
+        b_nombre.setVisible(false);
+        b_Puntuación.setVisible(false);
+        b_Estreno.setVisible(false);
+        b_Tipo.setVisible(true);
+        b_Genero.setVisible(false);
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        Ingresar_Nombre.setVisible(false);
+        Ingresar_Puntación.setVisible(false);
+        Ingresar_año.setVisible(false);
+        Ingresar_Tipo.setVisible(false);
+        Ingresar_Genero.setVisible(true);
+        //-------------------------------------//
+        b_nombre.setVisible(false);
+        b_Puntuación.setVisible(false);
+        b_Estreno.setVisible(false);
+        b_Tipo.setVisible(false);
+        b_Genero.setVisible(true);    }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void b_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_nombreActionPerformed
+        DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
+ DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Lista.getModel();
+ if (jTable1.getSelectedRow() >= 0) {
+     int indice = jTable1.getSelectedRow();
+     
+     jTable1.setModel(modelo1);
+            modelo1.setValueAt(Ingresar_Nombre.getText(), indice, 0);
+
+     ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setNombre(Ingresar_Nombre.getText());
+
+     try {
+         ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
+     } catch (IOException ex) {
+
+     }
+ }
+ Ingresar_Nombre.setText("");
+ j_editar.setVisible(false);
+    }//GEN-LAST:event_b_nombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1115,10 +1337,10 @@ public class Lab6_WalterReyes extends javax.swing.JFrame {
     private javax.swing.JMenuItem Eliminar;
     private javax.swing.JButton Guardar_Lista;
     private javax.swing.JButton Guardar_Lista1;
-    private javax.swing.JTextField Ingresar_Genero;
+    private javax.swing.JComboBox<String> Ingresar_Genero;
     private javax.swing.JTextField Ingresar_Nombre;
     private javax.swing.JTextField Ingresar_Puntación;
-    private javax.swing.JTextField Ingresar_Tipo;
+    private javax.swing.JComboBox<String> Ingresar_Tipo;
     private javax.swing.JTextField Ingresar_año;
     private javax.swing.JSpinner JS_Puntuación;
     private javax.swing.JSpinner JS_Puntuación1;

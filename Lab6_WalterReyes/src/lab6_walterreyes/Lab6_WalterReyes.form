@@ -690,9 +690,7 @@
                                   <Group type="102" attributes="0">
                                       <Component id="Ingresar_año" min="-2" pref="63" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="Ingresar_Tipo" min="-2" pref="63" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="Ingresar_Genero" min="-2" pref="63" max="-2" attributes="0"/>
+                                      <Component id="Ingresar_Tipo" min="-2" pref="60" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -705,7 +703,10 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="b_Tipo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="b_Genero" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="Ingresar_Genero" min="-2" max="-2" attributes="0"/>
+                                  <Component id="b_Genero" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="59" max="32767" attributes="0"/>
@@ -763,6 +764,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Puntuaci&#xf3;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton3">
               <Properties>
@@ -771,6 +775,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estreno"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton3ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton4">
               <Properties>
@@ -779,6 +786,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tipo"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton4ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jRadioButton5">
               <Properties>
@@ -787,6 +797,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="G&#xe9;nero"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButton5ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="Ingresar_Nombre">
             </Component>
@@ -794,14 +807,13 @@
             </Component>
             <Component class="javax.swing.JTextField" name="Ingresar_a&#xf1;o">
             </Component>
-            <Component class="javax.swing.JTextField" name="Ingresar_Tipo">
-            </Component>
-            <Component class="javax.swing.JTextField" name="Ingresar_Genero">
-            </Component>
             <Component class="javax.swing.JButton" name="b_nombre">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Guardar N"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_nombreActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="b_Puntuaci&#xf3;n">
               <Properties>
@@ -834,6 +846,39 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b_GeneroActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="Ingresar_Tipo">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="4">
+                    <StringItem index="0" value="Anime "/>
+                    <StringItem index="1" value="serie"/>
+                    <StringItem index="2" value="documental"/>
+                    <StringItem index="3" value="pel&#xed;cula"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="Ingresar_Genero">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="6">
+                    <StringItem index="0" value="Comedia"/>
+                    <StringItem index="1" value="romance"/>
+                    <StringItem index="2" value="terror"/>
+                    <StringItem index="3" value="SyFy"/>
+                    <StringItem index="4" value="Suspenso"/>
+                    <StringItem index="5" value="accion"/>
+                  </StringArray>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

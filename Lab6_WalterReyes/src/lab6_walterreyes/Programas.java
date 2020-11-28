@@ -14,6 +14,14 @@ private String genero;
     public Programas() {
     }
 
+    public Programas(int puntuación) {
+        this.puntuación = puntuación;
+    }
+
+    public Programas(String nombre) {
+        this.nombre = nombre;
+    }
+
     public Programas(String nombre, int puntuación, String fecha, String tipo, String genero) {
         this.nombre = nombre;
         this.puntuación = puntuación;
