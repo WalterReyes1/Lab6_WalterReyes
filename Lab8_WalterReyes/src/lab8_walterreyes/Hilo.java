@@ -11,6 +11,15 @@ public class Hilo extends Thread {
  private JProgressBar barra;
  private boolean avanzar;
  private boolean vive;
+ private boolean bandera;
+
+    public boolean isBandera() {
+        return bandera;
+    }
+
+    public void setBandera(boolean bandera) {
+        this.bandera = bandera;
+    }
  private String multimedia;
 
     public String getMultimedia() {
@@ -56,7 +65,11 @@ public class Hilo extends Thread {
     }
  
  @Override
+ //------------------------------------------------------//
+ // hilo dedicado a la progress bar de streaming
+ //-----------------------------------------------------//
  public void run(){
+     bandera = true;
     while(vive){
     
         if(avanzar){

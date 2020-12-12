@@ -99,21 +99,21 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
         Reproducir = new javax.swing.JMenuItem();
         j_editar = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
+        b_nombre = new javax.swing.JButton();
+        b_Puntuación = new javax.swing.JButton();
+        b_Estreno = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
+        b_Tipo = new javax.swing.JButton();
+        b_Genero = new javax.swing.JButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
+        Ingresar_Tipo = new javax.swing.JComboBox<>();
         jRadioButton4 = new javax.swing.JRadioButton();
+        Ingresar_Genero = new javax.swing.JComboBox<>();
         jRadioButton5 = new javax.swing.JRadioButton();
         Ingresar_Nombre = new javax.swing.JTextField();
         Ingresar_Puntación = new javax.swing.JTextField();
         Ingresar_año = new javax.swing.JTextField();
-        b_nombre = new javax.swing.JButton();
-        b_Puntuación = new javax.swing.JButton();
-        b_Estreno = new javax.swing.JButton();
-        b_Tipo = new javax.swing.JButton();
-        b_Genero = new javax.swing.JButton();
-        Ingresar_Tipo = new javax.swing.JComboBox<>();
-        Ingresar_Genero = new javax.swing.JComboBox<>();
         cargando = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jProgressBar2 = new javax.swing.JProgressBar();
@@ -491,45 +491,8 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
 
         j_editar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        buttonGroup3.add(jRadioButton1);
-        jRadioButton1.setText("Nombre");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup3.add(jRadioButton2);
-        jRadioButton2.setText("Puntuación");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup3.add(jRadioButton3);
-        jRadioButton3.setText("Estreno");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup3.add(jRadioButton4);
-        jRadioButton4.setText("Tipo");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup3.add(jRadioButton5);
-        jRadioButton5.setText("Género");
-        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton5ActionPerformed(evt);
-            }
-        });
+        jPanel2.setBackground(new java.awt.Color(204, 204, 0));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         b_nombre.setText("Guardar N");
         b_nombre.addActionListener(new java.awt.event.ActionListener() {
@@ -537,6 +500,7 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
                 b_nombreActionPerformed(evt);
             }
         });
+        jPanel2.add(b_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 110, 40));
 
         b_Puntuación.setText("Guardar P");
         b_Puntuación.addActionListener(new java.awt.event.ActionListener() {
@@ -544,6 +508,7 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
                 b_PuntuaciónActionPerformed(evt);
             }
         });
+        jPanel2.add(b_Puntuación, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 100, 40));
 
         b_Estreno.setText("Guardar E");
         b_Estreno.addActionListener(new java.awt.event.ActionListener() {
@@ -551,6 +516,17 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
                 b_EstrenoActionPerformed(evt);
             }
         });
+        jPanel2.add(b_Estreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 130, 40));
+
+        jRadioButton1.setBackground(new java.awt.Color(204, 204, 0));
+        buttonGroup3.add(jRadioButton1);
+        jRadioButton1.setText("Nombre");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 110, 40));
 
         b_Tipo.setText("Guardar T");
         b_Tipo.addActionListener(new java.awt.event.ActionListener() {
@@ -558,6 +534,7 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
                 b_TipoActionPerformed(evt);
             }
         });
+        jPanel2.add(b_Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 300, 120, 40));
 
         b_Genero.setText("Guardar G");
         b_Genero.addActionListener(new java.awt.event.ActionListener() {
@@ -565,83 +542,59 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
                 b_GeneroActionPerformed(evt);
             }
         });
+        jPanel2.add(b_Genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 300, 110, 40));
+
+        jRadioButton2.setBackground(new java.awt.Color(204, 204, 0));
+        buttonGroup3.add(jRadioButton2);
+        jRadioButton2.setText("Puntuación");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 110, 40));
+
+        jRadioButton3.setBackground(new java.awt.Color(204, 204, 0));
+        buttonGroup3.add(jRadioButton3);
+        jRadioButton3.setText("Estreno");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 90, 40));
 
         Ingresar_Tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anime ", "serie", "documental", "película" }));
+        jPanel2.add(Ingresar_Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, 110, 50));
+
+        jRadioButton4.setBackground(new java.awt.Color(204, 204, 0));
+        buttonGroup3.add(jRadioButton4);
+        jRadioButton4.setText("Tipo");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 100, 40));
 
         Ingresar_Genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Comedia", "romance", "terror", "SyFy", "Suspenso", "accion" }));
         Ingresar_Genero.setToolTipText("");
+        jPanel2.add(Ingresar_Genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 230, 110, 50));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Ingresar_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton1))
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(Ingresar_Puntación, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jRadioButton3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton4)
-                                .addGap(18, 18, 18)
-                                .addComponent(jRadioButton5))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(Ingresar_año, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Ingresar_Tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(b_nombre)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(b_Puntuación)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(b_Estreno)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(b_Tipo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Ingresar_Genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(b_Genero))))
-                .addGap(0, 59, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton5))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Ingresar_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ingresar_Puntación, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ingresar_año, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ingresar_Tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Ingresar_Genero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(b_nombre)
-                    .addComponent(b_Puntuación)
-                    .addComponent(b_Estreno)
-                    .addComponent(b_Tipo)
-                    .addComponent(b_Genero))
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
+        jRadioButton5.setBackground(new java.awt.Color(204, 204, 0));
+        buttonGroup3.add(jRadioButton5);
+        jRadioButton5.setText("Género");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 130, 80, 50));
+        jPanel2.add(Ingresar_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 130, 30));
+        jPanel2.add(Ingresar_Puntación, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 100, 40));
+        jPanel2.add(Ingresar_año, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, 130, 40));
 
-        j_editar.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
+        j_editar.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 460));
 
         jProgressBar2.setStringPainted(true);
 
@@ -1188,123 +1141,13 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_EliminarActionPerformed
-//-----------------------------------------------------------------------------------//
-    //    Aquí todo los private void son de editar
-    //--------------------------------------------------------------------------------//
-    private void b_PuntuaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_PuntuaciónActionPerformed
-        DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
-
-        if (jTable1.getSelectedRow() >= 0) {
-            int indice = jTable1.getSelectedRow();
-            modelo1.setValueAt(Ingresar_Puntación.getText(), indice, 1);
-            jTable1.setModel(modelo1);
-            ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setPuntuación(Integer.parseInt(Ingresar_Puntación.getText()));
-
-            try {
-                ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
-            } catch (IOException ex) {
-
-            }
-        }
-        Ingresar_Puntación.setText("");
-        j_editar.setVisible(false);
-    }//GEN-LAST:event_b_PuntuaciónActionPerformed
-
-    private void b_EstrenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_EstrenoActionPerformed
-        DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
-        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Lista.getModel();
-        if (jTable1.getSelectedRow() >= 0) {
-            int indice = jTable1.getSelectedRow();
-            jTable1.setModel(modelo1);
-
-            ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setFecha(Ingresar_año.getText());
-            modelo1.setValueAt(Ingresar_año.getText(), indice, 2);
-
-            try {
-                ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
-            } catch (IOException ex) {
-
-            }
-        }
-
-        j_editar.setVisible(false);
-    }//GEN-LAST:event_b_EstrenoActionPerformed
-
-    private void b_TipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_TipoActionPerformed
-        DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
-        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Lista.getModel();
-        if (jTable1.getSelectedRow() >= 0) {
-            int indice = jTable1.getSelectedRow();
-            jTable1.setModel(modelo1);
-            String tipo = "";
-            if (Ingresar_Tipo.getSelectedIndex() == 0) {
-                tipo = "Anime";
-            }
-            if (Ingresar_Tipo.getSelectedIndex() == 1) {
-                tipo = "Serie";
-            }
-            if (Ingresar_Tipo.getSelectedIndex() == 2) {
-                tipo = "Documental";
-            }
-            if (Ingresar_Tipo.getSelectedIndex() == 3) {
-                tipo = "Película";
-            }
-            ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setTipo(tipo);
-            modelo1.setValueAt(tipo, indice, 3);
-
-            try {
-                ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
-            } catch (IOException ex) {
-
-            }
-        }
-
-        j_editar.setVisible(false);
-    }//GEN-LAST:event_b_TipoActionPerformed
-
-    private void b_GeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_GeneroActionPerformed
-        DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
-        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Lista.getModel();
-        if (jTable1.getSelectedRow() >= 0) {
-            int indice = jTable1.getSelectedRow();
-            jTable1.setModel(modelo1);
-            String tipo = "";
-            if (Ingresar_Tipo.getSelectedIndex() == 0) {
-                tipo = "Comedia";
-            }
-            if (Ingresar_Tipo.getSelectedIndex() == 1) {
-                tipo = "Romance";
-            }
-            if (Ingresar_Tipo.getSelectedIndex() == 2) {
-                tipo = "Terror";
-            }
-            if (Ingresar_Tipo.getSelectedIndex() == 3) {
-                tipo = "Syfy";
-            }
-            if (Ingresar_Tipo.getSelectedIndex() == 4) {
-                tipo = "Suspenso";
-            }
-            if (Ingresar_Tipo.getSelectedIndex() == 5) {
-                tipo = "Acción";
-            }
-            ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setTipo(tipo);
-            modelo1.setValueAt(tipo, indice, 4);
-
-            try {
-                ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
-            } catch (IOException ex) {
-
-            }
-        }
-
-        j_editar.setVisible(false);
-    }//GEN-LAST:event_b_GeneroActionPerformed
 
     private void EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarActionPerformed
         j_editar.setModal(true);
         j_editar.pack();
         j_editar.setLocationRelativeTo(this);
         j_editar.setVisible(true);
+        
         Ingresar_Nombre.setVisible(false);
         Ingresar_Puntación.setVisible(false);
         Ingresar_año.setVisible(false);
@@ -1312,6 +1155,158 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
         Ingresar_Genero.setVisible(false);
 
     }//GEN-LAST:event_EditarActionPerformed
+
+    
+                                               
+
+                                            
+
+                                        
+
+  
+    
+    
+    private void ReproducirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReproducirActionPerformed
+       
+        Hilo h = new Hilo();
+        h.setBarra(jProgressBar1);
+        try{
+        if(jProgressBar1.getValue()==0){
+            h.start();
+        }
+            
+        }catch(Exception e){
+            
+        }
+        
+        h.setAvanzar(true);
+        h.setVive(true);
+
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+
+        int index = jTable1.getSelectedRow();
+        String multi = (String) modelo.getValueAt(index, 0);
+
+        h.setMultimedia(multi);
+
+    }//GEN-LAST:event_ReproducirActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void b_PuntuaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_PuntuaciónActionPerformed
+ DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
+
+ if (jTable1.getSelectedRow() >= 0) {
+     int indice = jTable1.getSelectedRow();
+     if(Integer.parseInt(Ingresar_Puntación.getText())<10){
+     ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setPuntuación(Integer.parseInt(Ingresar_Puntación.getText()));
+        modelo1.setValueAt(Ingresar_Puntación.getText(), indice, 1);
+     jTable1.setModel(modelo1);
+         
+     } 
+     if(Integer.parseInt(Ingresar_Puntación.getText())>10){
+         JOptionPane.showMessageDialog(null,"Tiene que ser un número del 1 al 10");
+     }
+
+     try {
+         ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
+     } catch (IOException ex) {
+
+     }
+ }
+ Ingresar_Puntación.setText("");
+ j_editar.setVisible(false);    }//GEN-LAST:event_b_PuntuaciónActionPerformed
+
+    private void b_GeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_GeneroActionPerformed
+        DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
+ DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Lista.getModel();
+ if (jTable1.getSelectedRow() >= 0) {
+     int indice = jTable1.getSelectedRow();
+     jTable1.setModel(modelo1);
+     String tipo = "";
+     if(Ingresar_Genero.getSelectedIndex()==0){
+       tipo = "Comedia";  
+     }
+     if(Ingresar_Genero.getSelectedIndex()==1){
+       tipo = "Romance";  
+     }
+     if(Ingresar_Genero.getSelectedIndex()==2){
+       tipo = "Terror";  
+     }
+     if(Ingresar_Genero.getSelectedIndex()==3){
+       tipo = "Syfy";  
+     }
+     if(Ingresar_Genero.getSelectedIndex()==4){
+       tipo = "Suspenso";  
+     }
+     if(Ingresar_Genero.getSelectedIndex()==5){
+       tipo = "Acción";  
+     }
+     ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setTipo(tipo);
+       modelo1.setValueAt(tipo, indice, 4);
+
+     try {
+         ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
+     } catch (IOException ex) {
+
+     }
+ }
+ 
+ j_editar.setVisible(false); 
+    }//GEN-LAST:event_b_GeneroActionPerformed
+
+    private void b_TipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_TipoActionPerformed
+         DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
+ DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Lista.getModel();
+ if (jTable1.getSelectedRow() >= 0) {
+     int indice = jTable1.getSelectedRow();
+     jTable1.setModel(modelo1);
+     String tipo = "";
+     if(Ingresar_Tipo.getSelectedIndex()==0){
+       tipo = "Anime";  
+     }
+     if(Ingresar_Tipo.getSelectedIndex()==1){
+       tipo = "Serie";  
+     }
+     if(Ingresar_Tipo.getSelectedIndex()==2){
+       tipo = "Documental";  
+     }
+     if(Ingresar_Tipo.getSelectedIndex()==3){
+       tipo = "Película";  
+     }
+     ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setTipo(tipo);
+       modelo1.setValueAt(tipo, indice, 3);
+
+     try {
+         ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
+     } catch (IOException ex) {
+
+     }
+ }
+ 
+ j_editar.setVisible(false); 
+    }//GEN-LAST:event_b_TipoActionPerformed
+
+    private void b_EstrenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_EstrenoActionPerformed
+ DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
+ DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Lista.getModel();
+ if (jTable1.getSelectedRow() >= 0) {
+     int indice = jTable1.getSelectedRow();
+     jTable1.setModel(modelo1);
+     
+     ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setFecha(Ingresar_año.getText());
+       modelo1.setValueAt(Ingresar_año.getText(), indice, 2);
+
+     try {
+         ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
+     } catch (IOException ex) {
+
+     }
+ }
+ 
+ j_editar.setVisible(false);     }//GEN-LAST:event_b_EstrenoActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         Ingresar_Nombre.setVisible(true);
@@ -1324,8 +1319,7 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
         b_Estreno.setVisible(false);
         b_Tipo.setVisible(false);
         b_Genero.setVisible(false);
-        b_nombre.setVisible(true);
-
+        b_nombre.setVisible(true); 
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -1343,7 +1337,7 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        Ingresar_Nombre.setVisible(false);
+       Ingresar_Nombre.setVisible(false);
         Ingresar_Puntación.setVisible(false);
         Ingresar_año.setVisible(true);
         Ingresar_Tipo.setVisible(false);
@@ -1371,7 +1365,7 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
-        Ingresar_Nombre.setVisible(false);
+          Ingresar_Nombre.setVisible(false);
         Ingresar_Puntación.setVisible(false);
         Ingresar_año.setVisible(false);
         Ingresar_Tipo.setVisible(false);
@@ -1381,49 +1375,29 @@ public class Lab8_WalterReyes extends javax.swing.JFrame {
         b_Puntuación.setVisible(false);
         b_Estreno.setVisible(false);
         b_Tipo.setVisible(false);
-        b_Genero.setVisible(true);    }//GEN-LAST:event_jRadioButton5ActionPerformed
+        b_Genero.setVisible(true);
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
 
     private void b_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_nombreActionPerformed
-        DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
-        DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Lista.getModel();
-        if (jTable1.getSelectedRow() >= 0) {
-            int indice = jTable1.getSelectedRow();
-
-            jTable1.setModel(modelo1);
+         DefaultTableModel modelo1 = (DefaultTableModel) jTable1.getModel();
+ DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) cb_Lista.getModel();
+ if (jTable1.getSelectedRow() >= 0) {
+     int indice = jTable1.getSelectedRow();
+     
+     jTable1.setModel(modelo1);
             modelo1.setValueAt(Ingresar_Nombre.getText(), indice, 0);
 
-            ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setNombre(Ingresar_Nombre.getText());
+     ((claudilist) cb_Lista.getSelectedItem()).getLista().get(indice).setNombre(Ingresar_Nombre.getText());
 
-            try {
-                ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
-            } catch (IOException ex) {
+     try {
+         ((claudilist) cb_Lista.getSelectedItem()).escribirArchivo();
+     } catch (IOException ex) {
 
-            }
-        }
-        Ingresar_Nombre.setText("");
-        j_editar.setVisible(false);
+     }
+ }
+ Ingresar_Nombre.setText("");
+ j_editar.setVisible(false);
     }//GEN-LAST:event_b_nombreActionPerformed
-
-    private void ReproducirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReproducirActionPerformed
-        Hilo h = new Hilo();
-
-        h.start();
-        h.setBarra(jProgressBar1);
-        h.setAvanzar(true);
-        h.setVive(true);
-
-        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-
-        int index = jTable1.getSelectedRow();
-        String multi = (String) modelo.getValueAt(index, 0);
-
-        h.setMultimedia(multi);
-
-    }//GEN-LAST:event_ReproducirActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
